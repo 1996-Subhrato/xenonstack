@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const mysql = require("mysql2");
-const { Client } = require("pg");
 const session = require("express-session");
 
 app.use(express.json());
@@ -36,32 +35,6 @@ connection.connect((err) => {
   console.log("Connected to the database.");
 });
 // -------------
-
-// Replace this with your ElephantSQL connection URL
-// const connectionString =
-// "postgres://zdyrklmx:nleV3VgZfO2JNaTgQM86I0PUjaxWWCP6@pom.db.elephantsql.com/zdyrklmx";
-
-// const client = new Client({
-//   connectionString: connectionString,
-// });
-
-// client
-//   .connect()
-//   .then(() => console.log("Connected to ElephantSQL Database"))
-//   .catch((error) => console.error("Error connecting to ElephantSQL", error));
-
-// const client = new Client({
-//   user: "zdyrklmx",
-//   host: "pom.db.elephantsql.com",
-//   database: "xenonstack",
-//   password: "nleV3VgZfO2JNaTgQM86I0PUjaxWWCP6",
-//   port: 5432,
-// });
-
-// client
-//   .connect()
-//   .then(() => console.log("Connected to PostgreSQL"))
-//   .catch((error) => console.error("Error connecting to PostgreSQL", error));
 
 function isLoggedIn(req, res, next) {
   // console.log(req.session.user);
